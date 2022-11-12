@@ -82,9 +82,9 @@ class App():
 
     def draw(self):
         pyxel.cls(pyxel.COLOR_BLACK)
-        pyxel.text(0,0,"Score: "+str(self.score),pyxel.COLOR_GREEN)
         pyxel.blt(self.player_x,self.player_y,0,0,0,self.player_w,self.player_h,pyxel.COLOR_BLACK)
         self.draw_things()
+        pyxel.text(0,0,"Score: "+str(self.score),pyxel.COLOR_GREEN)
         if self.is_gameover:
             strings = "Game over"
             x = (pyxel.width - len(strings)*pyxel.FONT_WIDTH)//2
