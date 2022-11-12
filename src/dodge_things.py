@@ -83,6 +83,8 @@ class App():
     def draw(self):
         pyxel.cls(pyxel.COLOR_BLACK)
         pyxel.text(0,0,"Score: "+str(self.score),pyxel.COLOR_GREEN)
+        pyxel.blt(self.player_x,self.player_y,0,0,0,self.player_w,self.player_h,pyxel.COLOR_BLACK)
+        self.draw_things()
         if self.is_gameover:
             strings = "Game over"
             x = (pyxel.width - len(strings)*pyxel.FONT_WIDTH)//2
@@ -93,8 +95,6 @@ class App():
             pyxel.text(x,y,strings,pyxel.COLOR_RED)
             strings = "Please press space key!"
             pyxel.text((pyxel.width - len(strings)*pyxel.FONT_WIDTH)//2,(pyxel.height - pyxel.FONT_HEIGHT)//2 + pyxel.FONT_HEIGHT,strings,pyxel.COLOR_PINK)
-        pyxel.blt(self.player_x,self.player_y,0,0,0,self.player_w,self.player_h,pyxel.COLOR_BLACK)
-        self.draw_things()
 
     def draw_things(self):
         for i, value in enumerate(self.things):
