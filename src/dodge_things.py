@@ -12,7 +12,7 @@ class App():
         pyxel.run(self.update,self.draw)
     def update(self):
         if self.is_gameover:
-            if pyxel.btnp(pyxel.KEY_SPACE):
+            if pyxel.btnp(pyxel.KEY_SPACE) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
                 self.reset()
             return
         self.update_player()
@@ -23,13 +23,13 @@ class App():
     def update_player(self):
         dx = 0
         dy = 0
-        if pyxel.btn(pyxel.KEY_W):
+        if pyxel.btn(pyxel.KEY_W) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_UP):
             dy -= 1
-        if pyxel.btn(pyxel.KEY_S):
+        if pyxel.btn(pyxel.KEY_S) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_DOWN):
             dy += 1
-        if pyxel.btn(pyxel.KEY_A):
+        if pyxel.btn(pyxel.KEY_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
             dx -= 1
-        if pyxel.btn(pyxel.KEY_D):
+        if pyxel.btn(pyxel.KEY_D) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
             dx += 1
 
         if self.player_y + dy < 0:
@@ -101,4 +101,3 @@ class App():
             x,y,w,h = value
             pyxel.blt(x,y,0,16,0,w,h,pyxel.COLOR_BLACK)
 App()
-
