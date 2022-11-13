@@ -7,9 +7,35 @@
     </head>
 
     <body>
-        <pyxel-run
-          root="./src"
-          name="dodge_things.py"
-          ></pyxel-run>
+        <script type="text/javascript">
+            let ut = navigator.userAgent;
+            let root = "./src"
+            let name = "dodge_things.py"
+        
+            if (
+                ut.indexOf('iPhone') > 0 || 
+                ut.indexOf('iPod') > 0 || 
+                ut.indexOf('iPad') > 0 || 
+                ut.indexOf('Android') > 0
+            ){
+                launchPyxel({
+                    command: "run", 
+                    root: root, 
+                    name: name, 
+                    script: "", 
+                    packages: "",
+                    gamepad: "enabled",
+                });
+            } else {
+                launchPyxel({
+                    command: "run", 
+                    root: root, 
+                    name: name, 
+                    script: "", 
+                    packages: "",
+                    gamepad: "disabled",
+                });
+            }
+        </script>
     </body>
 </html>
