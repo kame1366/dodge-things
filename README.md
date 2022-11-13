@@ -1,6 +1,6 @@
 # Dodge-things
 This is a game created with Pyxel.
-You must score points by moving the WASD key and dodging the red things.
+You must score points by moving with the WASD key and dodging the red things.
 The scoreboard is at the top left.
 Click here for the web version: https://kame1366.github.io/dodge-things/
 
